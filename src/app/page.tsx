@@ -5,6 +5,7 @@ import { makeStore } from '@/shared/store';
 import { fetchProducts } from '@/shared/store/slices';
 import { Header, ReviewSection, ProductsSection } from '@/widgets';
 
+export const dynamic = 'auto';
 export default async function Home() {
   const store = makeStore();
   const allReviews = await fetchReviews();

@@ -1,9 +1,11 @@
 import { LOCAL_URL } from '../config'
 import { Review } from '../types'
 
+export const revalidate = 60; 
 export const fetchReviews = async (): Promise<Review[]> => {
   try {
     const response = await fetch(`${LOCAL_URL}/reviews`, {
+      next: { revalidate: 60 },
       headers: { 'Content-Type': 'application/json' },
       cache: 'no-store'
     })
