@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 100%;
+  border-radius: 1.6rem;
+  background-color: $ui;
+  overflow: hidden;
+  // min-height: 80rem;
+}
+
+.img {
+  display: block;
+  object-fit: cover;
+  height: 36.6rem;
+  width: 100%;
+  border-radius: 1.4rem;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 0;
+}
+
+.price {
+  font-size: 3.6rem;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 3.2rem;
+  @include lines(8);
+}
+
+.footer {
+  margin-top: auto;
+}

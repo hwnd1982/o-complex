@@ -1,0 +1,9 @@
+.wysiwyg {
+  h1, h2, h3, p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 3.4rem;
+    }
+  }
+}

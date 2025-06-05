@@ -1,0 +1,29 @@
+.loader {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: block;
+  margin:2rem auto;
+  position: relative;
+  color: $ui;
+  box-sizing: border-box;
+  animation: animloader 3s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 1.4rem 0 0 -.2rem,  3.8rem 0 0 -.2rem,  -1.4rem 0 0 -.2rem,  -3.8rem 0 0 -0.2rem;
+  }
+  25% {
+    box-shadow: 1.4rem 0 0 -0.2rem,  3.8rem 0 0 -0.2rem,  -1.4rem 0 0 -0.2rem,  -3.8rem 0 0 0.2rem;
+  }
+  50% {
+    box-shadow: 1.4rem 0 0 -0.2rem,  3.8rem 0 0 -0.2rem,  -1.4rem 0 0 0.2rem,  -3.8rem 0 0 -0.2rem;
+  }
+  75% {
+    box-shadow: 1.4rem 0 0 0.2rem,  3.8rem 0 0 -0.2rem,  -1.4rem 0 0 -0.2rem,  -3.8rem 0 0 -0.2rem;
+  }
+  100% {
+    box-shadow: 1.4rem 0 0 -0.2rem,  3.8rem 0 0 0.2rem,  -1.4rem 0 0 -0.2rem,  -3.8rem 0 0 -0.2rem;
+  }
+}

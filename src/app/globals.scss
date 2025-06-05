@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: min(10px, calc(100vw / 375 * 10));
+  
+  @include breakpoint-up($lg) {
+    font-size: max(8px, min(12px, calc(100vw / 1920 * 10)));
+  }
+}
+
+body {
+  background-color: $dark;
+  color: $dark;
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.25;
+}

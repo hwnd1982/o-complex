@@ -1,0 +1,30 @@
+@mixin breakpoint-down($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-up($width) {
+  @media only screen and (min-width: ($width + 0.5)) {
+    @content;
+  }
+}
+
+@mixin hover($width: $lg) {
+  @media (hover: hover) and (min-width: ($width + 0.5)) {
+    transition: $hover-transition;
+
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin lines($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: $lines;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
