@@ -1,8 +1,9 @@
+import { LOCAL_URL } from '../config'
 import { Review } from '../types'
 
 export const fetchReviews = async (): Promise<Review[]> => {
   try {
-    const response = await fetch('http://localhost:3000/api/reviews', {
+    const response = await fetch(`${LOCAL_URL}/reviews`, {
       headers: { 'Content-Type': 'application/json' },
       cache: 'no-store'
     })
