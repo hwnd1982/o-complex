@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
-      },
-      {
-        protocol: 'https',
-        hostname: 'fastly.picsum.photos',
+        hostname: '**',
       },
       {
         protocol: 'http',
@@ -28,11 +24,6 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '1mb',
     },
   },
-  env: {
-    BASE_URL: process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000',
-  },
   logging: {
     fetches: {
       fullUrl: true,
@@ -41,7 +32,6 @@ const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: [
       path.join(__dirname, 'src', 'app'),
-      path.join(__dirname, 'src', 'ui', '**'),
     ],
     prependData: `@use "vars" as *; @use "mixin" as *;`,
   },
