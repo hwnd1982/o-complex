@@ -9,7 +9,10 @@ export async function GET(req: NextRequest) {
   try {
     const response = await fetch(
       `${API_URL}/products?page=${page}&page_size=${pageSize}`,
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { 
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      }}
     );
     
     if (!response.ok) throw new Error(`API status ${response.status}`);
