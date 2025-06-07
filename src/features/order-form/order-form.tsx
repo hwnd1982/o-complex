@@ -86,7 +86,6 @@ export const OrderForm = () => {
           inputRef={phoneRef}
           placeholder="+7 (___) ___ __-__"
           className={classes.input}
-          name='phone'
           unmask={'typed'} 
           overwrite={'shift'}
           onAccept={(value) => setPhone(`+7${value}`)}

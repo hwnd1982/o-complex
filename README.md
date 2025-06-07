@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Подробности реализации
 
-## Getting Started
+### В проекте использован Next.js v15 совместно с TypeScript.
+### Структура проекта построена с использованием Feature-Slice Design (FSD).
+### Для стилизации компонентов применяются SCSS-модули.
+### Для планшетов и мобильных устройств использован один breakpoint на ширине 992 пикселей с применением отзывчивой верстки.
+### Во избежание переполнения текста компонентами предусмотрены защитные механизмы на уровне CSS.
+### Повышенная эффективность отображения изображенияразработан специальный прокси-сервис для изменения размеров картинок и обхода ограничений CORS. Результаты кэшируются для дальнейшего использования.
+### Подгрузка товаров на страницу осуществляется порциями по 6 штук с использованием механизма infinite scroll (бесконечной прокрутки). Процесс подгрузки визуально обозначен специальным индикатором (лоадером).
+### Блок с отзывами реализован с использованием серверного рендеринга: с внешнего источника случайным образом выбираются 2 отзыва для отображения на странице.
+### Блок корзины рендерится на стороне клиента после гидратирования состояния корзины из localStorage.
+### Для плавной анимации мониторинга блока используется библиотека GSAP.
+### Валидация поля ввода телефона реализована с помощью компонента react-imask.
+### Отправка формы блокируется, если телефон не введен полностью.
+### Результат отправки выводится (успех / ошибка) модальным окном.
+### После закрытия модального окна форма автоматически очищается.
 
-First, run the development server:
+## Отказоустойчивость и безопасность
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Обработка контента с защитой от XSS-атак обеспечивается серверным компонентом, осуществляющим санитайзинг (очистка) полученных данных для безопасного формирования карточек отзывов.
