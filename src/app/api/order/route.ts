@@ -1,12 +1,11 @@
+import { API_URL } from '@/shared/config';
 import { NextRequest, NextResponse } from 'next/server';
-
-const ORDER_API_URL = 'http://o-complex.com:1337/order';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     
-    const response = await fetch(ORDER_API_URL, {
+    const response = await fetch(`${API_URL}/order`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

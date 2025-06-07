@@ -11,7 +11,6 @@ export async function GET(req: NextRequest) {
       `${API_URL}/products?page=${page}&page_size=${pageSize}`,
       { headers: { 
         'Content-Type': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       }}
     );
     
