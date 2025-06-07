@@ -3,7 +3,7 @@ import { useInfiniteScroll } from './hooks';
 import { fetchProducts } from '@/shared/store/slices';
 import { useAppSelector, useAppDispatch } from '@/shared/store';
 import { useRef } from 'react';
-import { ProductCard, Spinner } from '@/shared';
+import { Container, ProductCard, Spinner } from '@/shared';
 import { PAGE_SIZE } from '@/shared/config';
 import classes from "./styles.module.scss";
 
@@ -21,16 +21,18 @@ export function ProductsSection() {
 
   return (
     <section className={classes.wrapper}>
-      <ul className={classes.grid}>
-        {items.map(product => (
-          <ProductCard key={product.id} product={product} className={classes.card}/>
-        ))}
-      </ul>
-      {items.length < total && 
-        <div ref={loaderRef} className={classes.target}>
-          {status === 'loading' && <Spinner />}
-        </div>
-      }
+      <Container className={classes.container}>
+        <ul className={classes.grid}>
+          {items.map(product => (
+            <ProductCard key={product.id} product={product} className={classes.card}/>
+          ))}
+        </ul>
+        {items.length < total && 
+          <div ref={loaderRef} className={classes.target}>
+            {status === 'loading' && <Spinner />}
+          </div>
+        }
+      </Container>
     </section>
   );
 }

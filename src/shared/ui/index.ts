@@ -3,3 +3,4 @@ export * from "./container";
 export * from "./product-card";
 export * from "./spinner";
 export * from "./modal";
+export * from "./button";

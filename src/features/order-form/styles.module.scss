@@ -1,72 +1,17 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20rem 0 5rem;
-}
-
-.inner {
-  width: 100%;
-  padding: 1.2rem;
-  border-radius: 1.6rem;
-  max-width: 70.8rem;
-  background-color: $ui;
-}
-
-.title {
-  font-weight: 400;
-  font-size: 3.6rem;
-  line-height: 1.25;
-  margin: 0 0 2rem;
-}
-
-.empty {
-  text-align: center;
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem;
-}
-
-.item {
-  display: grid;
-  grid-template-columns: calc(60% - 1.6rem) 15% calc(25% - 1.6rem);
-  width: 100%;
-  gap: 1.6rem;
-  overflow: hidden;
-
-  & > :first-child {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-.footer {
-  width: 100%;
-  overflow: hidden;
-}
-
-.total {
-  display: grid;
-  grid-template-columns: 75% calc(25% - 1.6rem);
-  gap: 1.6rem;
-  font-weight: 500;
-  margin: 0 0 2rem;
-}
-
 .form {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 26.8rem;
   gap: 1.6rem;
+
+  @include breakpoint-down($lg) {
+    grid-template-columns: 100%;
+  }
 }
 
 .input, .submit, .close {
   padding: 1.2rem 1.6rem;
-  border: none;
+  border: 2px solid $dark;
   height: 6.8rem;
   color: $light;
   border-radius: 1.6rem;
@@ -76,14 +21,34 @@
   font-weight: 400;
   font-size: 3.6rem;
   line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include breakpoint-down($lg) {
+    font-size: 7.2rem;
+    height: 13.6rem;
+    border-radius: 3.2rem;
+  }
 }
 
 .input {
+  display: flex;
+  align-items: center;
   width: 100%;
+  outline: none;
+
+  &:-webkit-autofill {
+    background: $dark !important;
+  }
 
   &::placeholder {
+    font-size: inherit !important;
     color: inherit;
     opacity: 1;
+  }
+
+  @include hover {
+    box-shadow: 0 0 0 2px inset #fff;
   }
 }
 
@@ -94,9 +59,14 @@
   text-transform: lowercase;
   transition: opacity .3s ease-in-out;
   width: 100%;
+  cursor: pointer;
 
   &:disabled {
     opacity: 0.7;
+  }
+
+  @include hover {
+    box-shadow: 0 0 0 2px inset #fff;
   }
 }
 
@@ -105,6 +75,10 @@
   padding: 2.4rem;
   text-align: center;
   width: 100%;
+
+  @include breakpoint-down($lg) {
+    padding: 4rem;
+  }
 }
 
 .success {

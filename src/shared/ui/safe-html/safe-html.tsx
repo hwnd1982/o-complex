@@ -11,12 +11,7 @@ interface SafeHtmlProps {
 }
 
 export const SafeHtml = ({ html, className }: SafeHtmlProps) => {
-  // const [content, setContent] = useState("")
   const content = sanitizeHTML(html);
-
-  // useEffect(() => {
-  //   setContent(sanitizeHTML(html))
-  // }, [html])
 
   return (
     <div 

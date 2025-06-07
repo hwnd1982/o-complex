@@ -1,5 +1,9 @@
 .section {
   padding: 5rem 0;
+
+  @include breakpoint-down($lg) {
+    padding: 9.6rem 0;
+  }
 }
 
 .container {
@@ -25,6 +29,11 @@
   gap: 3.4rem;
   max-width: 97rem;
   width: 100%;
+
+  @include breakpoint-down($lg) {
+    grid-template-columns: 100%;
+    gap: 4.4rem;
+  }
 }
 
 .item {
@@ -33,4 +42,9 @@
   min-height: 32rem;
   border-radius: 1.6rem;
   background-color: $ui;
+
+  @include breakpoint-down($lg) {
+    padding: 4rem 4.8rem;
+    border-radius: 3.2rem;
+  }
 }

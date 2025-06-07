@@ -7,6 +7,11 @@
   background-color: $ui;
   overflow: hidden;
   // min-height: 80rem;
+
+  @include breakpoint-down($lg) {
+    border-radius: 3.2rem;
+    padding: 2rem;
+  }
 }
 
 .img {
@@ -14,7 +19,12 @@
   object-fit: cover;
   height: 36.6rem;
   width: 100%;
-  border-radius: 1.4rem;
+  border-radius: 1.6rem;
+
+  @include breakpoint-down($lg) {
+    height: 73.2rem;
+    border-radius: 3.2rem;
+  }
 }
 
 .name {
@@ -27,6 +37,10 @@
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 1.25;
+
+  @include breakpoint-down($lg) {
+    font-size: 7.2rem;
+  }
 }
 
 .description {
@@ -39,6 +53,10 @@
   text-align: center;
   margin: 0 0 3.2rem;
   @include lines(8);
+
+  @include breakpoint-down($lg) {
+    font-size: 7.2rem;
+  }
 }
 
 .footer {

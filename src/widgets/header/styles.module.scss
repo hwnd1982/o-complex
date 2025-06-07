@@ -1,5 +1,9 @@
 .header {
   padding: 5.5rem 0;
+
+  @include breakpoint-down($lg) {
+    padding: 3.2rem 0 9.6rem;
+  }
 }
 
 .title {
@@ -7,7 +11,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 1.6rem 2.6rem;
-  height: 13.2rem;
+  min-height: 13.2rem;
   border-radius: 1.6rem;
   background-color: $grey;
   color: $light;
@@ -17,4 +21,10 @@
   font-weight: 400;
   font-size: 9.6rem;
   line-height: 1;
+
+  @include breakpoint-down($lg) {
+    font-size: 8rem;
+    padding: 1.6rem;
+    text-align: center;
+  }
 }

@@ -18,17 +18,14 @@ export async function GET(request: Request) {
     let decodedUrl = decodeURIComponent(originalUrl);
     console.log(`[PROXY] Original URL: ${decodedUrl}`);
     
-    // Заменяем размеры на 300x400 (ширина x высота)
     decodedUrl = replaceImageDimensions(decodedUrl, 300, 400);
     console.log(`[PROXY] Processed URL: ${decodedUrl}`);
     
-    // Специальные заголовки для обхода блокировок
     const headers: Record<string, string> = {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       'Accept': 'image/*',
     };
 
-    // Для picsum.photos добавляем Referer
     if (decodedUrl.includes('picsum.photos')) {
       headers['Referer'] = 'https://picsum.photos/';
     }

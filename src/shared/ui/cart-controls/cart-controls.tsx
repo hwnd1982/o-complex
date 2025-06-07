@@ -5,6 +5,7 @@ import { RootState } from '@/shared/store';
 import { increment, decrement, setValue } from '@/shared/store/slices';
 import classes from "./styles.module.scss";
 import { FormEventHandler } from 'react';
+import { Button } from '../button';
 
 interface CartCounterProps {
   productId: string;
@@ -46,30 +47,15 @@ export const CartControls = ({
 
   if (quantity === 0) {
     return (
-      <button 
-        onClick={handleIncrement}
-        className={classes.button}
-      >
-        Купить
-      </button>
+      <Button onClick={handleIncrement} >Купить</Button>
     );
   }
 
   return (
     <div className={classes.grid}>
-      <button 
-        onClick={handleDecrement}
-        className={classes.button}
-      >
-        -
-      </button>
+      <Button onClick={handleDecrement}>-</Button>
       <input value={quantity} onInput={handleInput} className={classes.input} />
-      <button 
-        onClick={handleIncrement}
-        className={classes.button}
-      >
-        +
-      </button>
+      <Button onClick={handleIncrement}>+</Button>
     </div>
   );
 };

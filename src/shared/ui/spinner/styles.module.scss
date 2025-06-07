@@ -1,18 +1,24 @@
 .loader {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   display: block;
-  margin:2rem auto;
+  margin: 2rem auto;
   position: relative;
   color: $ui;
   box-sizing: border-box;
   animation: animloader 3s linear infinite;
+  transform: scale(1.3);
+
+  @include breakpoint-down($lg) {
+    margin: 4rem auto;
+    transform: scale(2.6);
+  }
 }
 
 @keyframes animloader {
   0% {
-    box-shadow: 1.4rem 0 0 -.2rem,  3.8rem 0 0 -.2rem,  -1.4rem 0 0 -.2rem,  -3.8rem 0 0 -0.2rem;
+    box-shadow: 1.4rem 0 0 -0.2rem,  3.8rem 0 0 -0.2rem,  -1.4rem 0 0 -0.2rem,  -3.8rem 0 0 -0.2rem;
   }
   25% {
     box-shadow: 1.4rem 0 0 -0.2rem,  3.8rem 0 0 -0.2rem,  -1.4rem 0 0 -0.2rem,  -3.8rem 0 0 0.2rem;

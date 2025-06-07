@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: min(8px, calc(100vw / 360 * 5));
+
+  @include breakpoint-up($lg) {
+    font-size: max(10px, calc(100vw / 1920 * 10));
+  }
+}
+
+body {
+  background-color: $dark;
+  color: $dark;
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.25;
+
+  @include breakpoint-down($lg) {
+    font-size: 4.8rem;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  background-color: $dark !important;
+  transition:
+    box-shadow .3s 0s,
+    all 0s ease-in-out 100000000000000000000000000s;
+}

@@ -10,9 +10,9 @@
   }
 }
 
-@mixin hover($width: $lg) {
+@mixin hover($width: 992px) {
   @media (hover: hover) and (min-width: ($width + 0.5)) {
-    transition: $hover-transition;
+    transition: .3s;
 
     &:hover {
       @content;
