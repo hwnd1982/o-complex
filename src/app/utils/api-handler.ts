@@ -3,10 +3,10 @@ import { z } from 'zod';
 import { ClientError, ServerError } from '@/features/services/api-service';
 
 // Схемы валидации с использованием Zod
-const OrderRequestSchema = z.object({
+export const OrderRequestSchema = z.object({
   phone: z.string().min(5, "Phone number is too short"),
   cart: z.array(z.object({
-    id: z.number().positive("Invalid product ID"),
+    id: z.coerce.number().positive("Invalid product ID"), // Используем coerce
     quantity: z.number().positive("Quantity must be positive")
   })).nonempty("Cart cannot be empty")
 });
