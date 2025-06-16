@@ -60,31 +60,6 @@ export const fetchProducts = createAsyncThunk<
   }
 );
 
-// export const fetchProducts = createAsyncThunk<
-//   ProductsApiResponse,
-//   FetchProductsParams,
-//   { rejectValue: string }
-// >(
-//   'products/fetchProducts',
-//   async ({ page, pageSize }, { rejectWithValue }) => {
-//     try {
-//       const response = await fetch(
-//         `${LOCAL_URL}/products?page=${page}&page_size=${pageSize}`
-//       );
-      
-//       if (!response.ok) {
-//         throw new Error(`API responded with status ${response.status}`);
-//       }
-      
-//       return await response.json() as ProductsApiResponse;
-//     } catch (error) {
-//       if (error instanceof Error) {
-//         return rejectWithValue(error.message);
-//       }
-//       return rejectWithValue('Unknown error occurred');
-//     }
-//   }
-// );
 
 interface HydrateAction extends Action<typeof HYDRATE> {
   payload: {
